@@ -1,4 +1,4 @@
-import re
+vviimport re
 from netmiko import ConnectHandler
 import getpass 
 
@@ -6,9 +6,9 @@ import getpass
 device = {
     'device_type': 'cisco_ios',
     'ip': '192.168.56.101',
-    'username': getpass.getpass('Enter Username (e.g., prne): '),  # Use getpass for username input
-    'password': getpass.getpass('Enter Password (e.g., cisco123!): '),  # Use getpass for password input
-    'secret': 'class123!', #class123! = secret passwrd
+    'username': getpass.getpass('Enter Username: '),  # Use getpass for username input #username = prne
+    'password': getpass.getpass('Enter Password: '),  # Use getpass for password input #password = cisco123!
+    'secret' : getpass.getpass('Enter the secret phrase: '), #secret phrase = class123!
 }
 
 # Connect to the device
@@ -35,7 +35,7 @@ config_commands += [
 config_commands += [
     'router ospf 1',
     'router-id 1.1.1.1',  # Specify the router ID
-    'network 0.0.0.0 255.255.255.255 area 0',
+    'network 192.168.56.101 255.255.255.255 area 0',
     'exit'
 ]
 
