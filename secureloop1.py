@@ -16,9 +16,9 @@ if not re.match("^[a-zA-Z0-9_-]+$", username):
 device = {
     'device_type': 'cisco_ios_ssh',
     'ip': '192.168.56.101',
-    'username': username,
-    'password': getpass.getpass('Enter Device Password: '),
-    'secret': getpass.getpass('Enter The Secret Phrase: '),
+    'username': getpass.getpass('Enter The Device Username: '), #Username = prne
+    'password': getpass.getpass('Enter Device Password: '), #Password = cisco123!
+    'secret': getpass.getpass('Enter The Secret Phrase: '), #Secret Phrase = class123!
     'global_delay_factor': 2,  # Adjust this value based on your network conditions
 }
 
