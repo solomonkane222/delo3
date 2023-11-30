@@ -27,22 +27,22 @@ config_commands = ['hostname Router3']
 # Adding configuration for loopback interface
 config_commands.extend([
     'interface Loopback0',
-    'ip address 1.1.1.1 255.255.255.255',  # Change the IP address and subnet mask accordingly
-    'description Loopback Interface',
+    'ip address 1.1.1.2 255.255.255.255',  # Change the IP address and subnet mask accordingly
+    'description Loopback Interface'
 ])
 
 # Adding configuration for GigabitEthernet 0/2 interface
 config_commands.extend([
-    'interface GigabitEthernet0/2',
+    'interface GigabitEthernet2',
     'ip address 192.168.1.1 255.255.255.0',  # Change the IP address and subnet mask accordingly
-    'description GigabitEthernet 0/2 Interface',
+    'description GigabitEthernet 0/2 Interface'
 ])
 
 # Adding EIGRP configuration
 config_commands.extend([
     'router eigrp 1',
     'network 1.1.1.1 0.0.0.0',  # Loopback network
-    'network 192.168.1.0 0.0.0.255',  # GigabitEthernet 0/2 network
+    'network 192.168.1.0 0.0.0.255'  # GigabitEthernet 0/2 network
 ])
 
 # Applying the configuration
